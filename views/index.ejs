@@ -1,0 +1,95 @@
+<div class="newmovies">
+    <h1 class="Welcome_Heading">Welcome</h1>
+</div>
+
+<section class="articles">
+    <h2 class="articles_heading">Latest Movies</h2>
+
+    <div class="flex-container">
+        <div class="flexelement">
+            <a href="/3diots" class="<%= isActiveRoute('/3diots', currentRoute) %>">
+                <img src="/img/3idiots/cover.jpeg" alt="3 Idiots" class="movie1" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>
+        <div class="flexelement">
+            <a href="/baywatch" class="<%= isActiveRoute('/baywatch', currentRoute) %>">
+                <img src="/img/baywatch/cover.jpeg" alt="Baywatch" class="movie2" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>
+        <div class="flexelement">
+            <a href="/cellular" class="<%= isActiveRoute('/cellular', currentRoute) %>">
+                <img src="/img/cellular/cover.jpeg" alt="Cellular" class="movie3" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>
+        <div class="flexelement">
+            <a href="/deadpool3" class="<%= isActiveRoute('/deadpool3', currentRoute) %>">
+                <img src="/img/deadpool3/cover.jpeg" alt="Deadpool 3" class="movie4" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>
+        <div class="flexelement">
+            <a href="/fallguy" class="<%= isActiveRoute('/fallguy', currentRoute) %>">
+                <img src="/img/fallguy/cover.jpeg" alt="Fall Guy" class="movie5" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>
+        <div class="flexelement">
+            <a href="/findingnemo" class="<%= isActiveRoute('/findingnemo', currentRoute) %>">
+                <img src="/img/findingNemo/cover.jpeg" alt="Finding Nemo" class="movie6" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>
+        <div class="flexelement">
+            <a href="/piranah" class="<%= isActiveRoute('/piranah', currentRoute) %>">
+                <img src="/img/piranah/cover.jpeg" alt="Piranah" class="movie7" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div> 
+        <div class="flexelement">
+            <a href="/thenun" class="<%= isActiveRoute('/thenun', currentRoute) %>">
+                <img src="/img/Thenun/cover.jpeg" alt="The Nun" class="movie8" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>     
+        <div class="flexelement">
+            <a href="/v" class="<%= isActiveRoute('/v', currentRoute) %>">
+                <img src="/img/v/cover.jpeg" alt="V" class="movie9" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>     
+        <div class="flexelement">
+            <a href="/zodiac" class="<%= isActiveRoute('/zodiac', currentRoute) %>">
+                <img src="/img/Zodiac/cover.jpeg" alt="Zodiac" class="movie10" width="100" height="150" style="border-radius:7px">
+            </a>
+        </div>     
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <ul class="article_ul">
+        <h2 class="articles__heading">Latest Reviews</h2>
+        <% data.forEach(postelement => { %>
+            <li>
+                <a href="/post/<%= postelement._id %>">
+                    <span><%= postelement.title %></span>
+                    <span class="article-list_date"><%= postelement.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+</section>
